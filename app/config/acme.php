@@ -2,6 +2,6 @@
 
 return [
     'events' => [
-        'Acme.Tickets.TicketWasSubmitted' => 'Acme\Tickets\Mailers\NotifyNewTicketWasSubmitted'
+        'Acme.Tickets.TicketWasOpened' => 'Acme\Tickets\Mailers\NotifyNewTicketWasOpened'
     ]
 ];

@@ -1,9 +1,9 @@
 <?php namespace Acme\Tickets\Mailers;
 
-use Acme\Tickets\TicketWasSubmitted;
+use Acme\Tickets\TicketWasOpened;
 use Illuminate\Log\Writer;
 
-class NotifyNewTicketWasSubmitted
+class NotifyNewTicketWasOpened
 {
     /**
      * @var \Illuminate\Log\Writer
@@ -19,7 +19,7 @@ class NotifyNewTicketWasSubmitted
     }
 
     /**
-     * @param TicketWasSubmitted $event
+     * @param TicketWasOpened $event
      */
     public function handle($event)
     {

@@ -1,6 +1,6 @@
 <?php namespace Acme\Tickets; 
 
-class TicketWasSubmitted
+class TicketWasOpened
 {
     /** @var Ticket */
     public $ticket;

@@ -2,7 +2,7 @@
 
 use Acme\Commanding\Dispatcher;
 
-class SubmitTicketCommandHandler
+class OpenTicketCommandHandler
 {
     /**
      * @var Ticket
@@ -21,7 +21,7 @@ class SubmitTicketCommandHandler
 
     public function handle($command)
     {
-        $ticket = $this->ticket->submit($command->title, $command->description, $command->tags);
+        $ticket = $this->ticket->open($command->title, $command->description, $command->tags);
 
         $this->dispatcher->dispatch($ticket->releaseEvents());
 

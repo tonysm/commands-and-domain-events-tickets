@@ -1,6 +1,6 @@
 <?php
 
-use Acme\Tickets\SubmitTicketCommand;
+use Acme\Tickets\OpenTicketCommand;
 use Acme\Tickets\Tag;
 use Acme\Tickets\Ticket;
 
@@ -31,7 +31,7 @@ class TicketsController extends BaseController
      */
     public function store()
     {
-        $command = new SubmitTicketCommand(
+        $command = new OpenTicketCommand(
             Input::get("title"),
             Input::get('description'),
             (array) Input::get('tags')
@@ -49,6 +49,7 @@ class TicketsController extends BaseController
     public function show($ticket_id)
     {
         $ticket = Ticket::with("tags")->findOrFail($ticket_id);
+
         return $this->render("tickets.show", compact('ticket'));
     }
 

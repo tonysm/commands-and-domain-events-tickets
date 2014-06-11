@@ -8,6 +8,9 @@ class Ticket extends Entity
 {
     use EventProvider;
 
+    /**
+     * @var array
+     */
     protected $fillable = ['title', 'description'];
 
     /**
@@ -16,7 +19,7 @@ class Ticket extends Entity
      * @param array $tags
      * @return Ticket
      */
-    public function submit($title, $description, array $tags = [])
+    public function open($title, $description, array $tags = [])
     {
         $this->attributes = ['title' => $title, 'description' => $description];
         $this->save();
@@ -25,7 +28,7 @@ class Ticket extends Entity
         // loading tags
         $this->tags;
 
-        $this->raise(new TicketWasSubmitted($this));
+        $this->raise(new TicketWasOpened($this));
 
         return $this;
     }

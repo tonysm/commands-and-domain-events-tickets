@@ -1,6 +1,6 @@
 <?php namespace Acme\Tickets; 
 
-class SubmitTicketCommand
+class OpenTicketCommand
 {
     /**
      * @var string
